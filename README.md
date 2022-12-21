@@ -1,8 +1,8 @@
 # @popile/language-utils <!-- omit in toc -->
 
 [![npm version](https://img.shields.io/npm/v/@popile/language-utils.svg)](https://npmjs.com/package/@popile/language-utils)
-[![CircleCI](https://circleci.com/gh/popile-media/language-utils/tree/master.svg?style=shield)](https://circleci.com/gh/popile-media/language-utils/tree/master)
-[![codecov](https://codecov.io/gh/popile-media/language-utils/branch/master/graph/badge.svg?token=X1gImxfIya)](https://codecov.io/gh/popile-media/language-utils)
+[![Build and Deploy](https://github.com/popile-media/language-utils/actions/workflows/build_and_deploy.workflow.yml/badge.svg)](https://github.com/popile-media/language-utils/actions/workflows/build_and_deploy.workflow.yml)
+[![codecov](https://codecov.io/gh/popile-media/language-utils/branch/main/graph/badge.svg?token=4G9ZHBL8UA)](https://codecov.io/gh/popile-media/language-utils)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 [![license](https://img.shields.io/npm/l/@popile/language-utils.svg)](https://github.com/popile-media/language-utils/blob/master/LICENSE)
 
@@ -17,7 +17,7 @@ npm i @popile/language-utils
 ## Usage
 
 ```javascript
-import {Turkish} from '@popile/language-utils';
+import { Turkish } from '@popile/language-utils';
 
 // returns -> ['Si', 'ne', 'ma']
 Turkish.spelling('Sinema');

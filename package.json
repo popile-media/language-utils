@@ -1,6 +1,6 @@
 {
   "name": "@popile/language-utils",
-  "version": "0.0.0",
+  "version": "0.0.16",
   "description": "Popile's language utilities",
   "main": "build/main/index.js",
   "typings": "build/main/index.d.ts",
@@ -33,16 +33,13 @@
     "cov:html": "nyc report --reporter=html",
     "cov:lcov": "nyc report --reporter=lcov",
     "cov:send": "run-s cov:lcov && codecov",
-    "cov:check": "nyc report && nyc check-coverage --lines 100 --functions 100 --branches 100",
+    "cov:check": "nyc report && nyc check-coverage",
     "doc": "run-s doc:html && open-cli build/docs/index.html",
     "doc:html": "typedoc src/ --exclude **/*.spec.ts --target ES6 --mode file --out build/docs",
     "doc:json": "typedoc src/ --exclude **/*.spec.ts --target ES6 --mode file --json build/docs/typedoc.json",
-    "doc:publish": "gh-pages -m \"[ci skip] Updates\" -d build/docs",
-    "version": "standard-version",
+    "doc:publish": "gh-pages -m \"chore(docs): updates [ci skip]\" -d build/docs",
     "reset-hard": "git clean -dfx && git reset --hard && yarn",
-    "prepare-release": "run-s reset-hard test cov:check doc:html version doc:publish",
     "prepare": "husky install",
-    "pre-commit": "lint-staged",
     "release": "release-it"
   },
   "devDependencies": {
@@ -69,7 +66,6 @@
     "open-cli": "^6.0.1",
     "prettier": "^2.8.1",
     "release-it": "^15.5.1",
-    "standard-version": "^9.5.0",
     "ts-node": "^9.0.0",
     "typedoc": "^0.19.0",
     "typescript": "^4.0.2"
