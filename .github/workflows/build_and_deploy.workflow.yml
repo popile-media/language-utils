@@ -61,7 +61,6 @@ jobs:
 
       - name: Publish package
         run: |
-          npm run reset-hard
           git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
           npm run doc:html
           npm run doc:publish

@@ -12,6 +12,14 @@
     "utils",
     "turkish"
   ],
+  "files": [
+    "build/main",
+    "build/module",
+    "!**/*.spec.*",
+    "CHANGELOG.md",
+    "LICENSE",
+    "README.md"
+  ],
   "scripts": {
     "commit": "git-cz",
     "build": "run-p build:*",
@@ -70,15 +78,6 @@
     "typedoc": "^0.19.0",
     "typescript": "^4.0.2"
   },
-  "files": [
-    "build/main",
-    "build/module",
-    "!**/*.spec.*",
-    "!**/*.json",
-    "CHANGELOG.md",
-    "LICENSE",
-    "README.md"
-  ],
   "ava": {
     "failFast": true,
     "timeout": "60s",
@@ -113,7 +112,8 @@
   "release-it": {
     "git": {
       "commitMessage": "chore: release ${version} [skip ci]",
-      "tagName": "v${version}"
+      "tagName": "v${version}",
+      "changelog": "npx auto-changelog --stdout --commit-limit false -u --template ./changelog-compact.hbs"
     },
     "npm": {
       "publish": true
@@ -123,8 +123,12 @@
     },
     "plugins": {
       "@release-it/conventional-changelog": {
-        "preset": "angular"
+        "preset": "angular",
+        "infile": "CHANGELOG.md"
       }
+    },
+    "hooks": {
+      "after:bump": "npx auto-changelog -p"
     }
   },
   "engines": {
