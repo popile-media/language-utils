@@ -1,6 +1,6 @@
 {
   "name": "@popile/language-utils",
-  "version": "0.0.16",
+  "version": "1.0.0",
   "description": "Popile's language utilities",
   "main": "build/main/index.js",
   "typings": "build/main/index.d.ts",
